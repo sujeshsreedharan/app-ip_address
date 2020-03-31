@@ -1,3 +1,4 @@
+
 /**
  * Calculates an IPv4-mapped IPv6 address.
  * @param {string} ipv4 - An IPv4 address in dotted-quad format.
@@ -20,7 +21,7 @@ function getIpv4MappedIpv6Address(ipv4) {
     // Iterate over the IPv4 address parts and verify each segment was a number between 0 and 255.
     for(let i=0; i < numIpv4Segments; i++) {
       if( isNaN(Number(ipv4Quads[i])) || ipv4Quads[i] < 0 || ipv4Quads[i] > 255 ) {
-        validQuads = false;
+        validQuads = false;        
       }
     }
     // Passed IPv4 is valid. Now to derive an IPv4-mapped IPv6 address.
@@ -46,5 +47,4 @@ function getIpv4MappedIpv6Address(ipv4) {
   }
   return ipv6Address;
 }
-
-
+module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
